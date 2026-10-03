@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRDO Q-NAV // Tactical Quantum Magnetometry</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <div class="hud-container">
+    <header class="hud-header">
+      <div class="title">DRDO Q-SENSING-NAV <span>// CONFIDENTIAL</span></div>
+      <div class="status-badge"><span class="pulse"></span> GPS-DENIED MODE ACTIVE</div>
+    </header>
+
+    <main class="hud-body">
+      <div class="panel left-panel">
+        <h3>SENSOR TELEMETRY</h3>
+        <div class="metric"><label>Sensor Type:</label> <span>NV-Diamond Spin-1</span></div>
+        <div class="metric"><label>Sensitivity:</label> <span>10 pT/√Hz</span></div>
+        <div class="metric"><label>Resonance Frequency:</label> <span id="freq-val">2.870 GHz</span></div>
+        <div class="metric"><label>Position Drift (10h):</label> <span style="color:#00ff88">&lt; 12 meters</span></div>
+      </div>
+
+      <div class="panel right-panel">
+        <h3>TACTICAL LOG</h3>
+        <div class="terminal" id="term-log">
+          [SYS_INIT] NV-Center Quantum Magnetometer online.<br>
+          [GPS_WARN] Satellite signal lost/jammed. Switching to Quantum Gravitational Drift Map.<br>
+        </div>
+        <button onclick="scanAnomalies()">RUN SENSOR SWEEP</button>
+      </div>
+    </main>
+  </div>
+
+  <div id="canvas-container"></div>
+  <script src="app.js"></script>
+</body>
+</html>
